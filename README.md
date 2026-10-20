@@ -1,6 +1,10 @@
 # msx
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/ypopivniak/msx.svg)](https://pkg.go.dev/github.com/ypopivniak/msx)
+[![CI](https://github.com/ypopivniak/msx/actions/workflows/ci.yml/badge.svg)](https://github.com/ypopivniak/msx/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ypopivniak/msx)](https://goreportcard.com/report/github.com/ypopivniak/msx)
+[![Release](https://img.shields.io/github/v/release/ypopivniak/msx)](https://github.com/ypopivniak/msx/releases)
+[![License: MIT](https://img.shields.io/github/license/ypopivniak/msx)](LICENSE)
 
 Strictly-typed Go API for producing and consuming [Media Station X](https://msx.benzac.de/) JSON documents. Builders for every MSX root object (Start, Menu, Content, Dictionary), polymorphic helpers for the tricky fields (Panel, Live, Selection, ItemData), and a small HTTP package for serving everything with the CORS headers MSX requires.
 
@@ -181,15 +185,9 @@ go test ./...
 go vet  ./...
 ```
 
-## Extending the library
+## Contributing
 
-Missing an MSX field? The pattern is always the same:
-
-1. Add the field to the struct with the appropriate tag (`omitempty`, `omitzero`, or a custom marshaler if polymorphic).
-2. Add a `WithX` setter returning the receiver.
-3. If the field is an enum, add a typed string alias + constants + an `allX` slice and call `validate.OneOf("x", value, allX...)` from `Validate`.
-4. If the field is polymorphic, add a small wrapper type with `MarshalJSON`/`UnmarshalJSON` and a `Validate`.
-5. Add tests covering the happy path, negative validation, and — if a reference fixture exists — include it in the appropriate round-trip test list.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and how to add missing MSX fields. Security issues: see [SECURITY.md](SECURITY.md).
 
 ## License
 
