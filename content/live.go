@@ -122,15 +122,15 @@ func NewLive() *Live { return &Live{} }
 
 // ---- fluent setters for Live itself ----
 
-func (l *Live) WithType(t LiveType) *Live              { l.Type = t; return l }
-func (l *Live) WithFrom(ms int64) *Live                { l.From = ms; return l }
-func (l *Live) WithTo(ms int64) *Live                  { l.To = ms; return l }
-func (l *Live) WithDuration(ms int64) *Live            { l.Duration = ms; return l }
-func (l *Live) WithDelay(ms int64) *Live               { l.Delay = ms; return l }
-func (l *Live) WithSource(s string) *Live              { l.Source = s; return l }
-func (l *Live) WithComing(s *LiveState) *Live          { l.Coming = s; return l }
-func (l *Live) WithRunning(s *LiveRunningState) *Live  { l.Running = s; return l }
-func (l *Live) WithOver(s *LiveState) *Live            { l.Over = s; return l }
+func (l *Live) WithType(t LiveType) *Live             { l.Type = t; return l }
+func (l *Live) WithFrom(ms int64) *Live               { l.From = ms; return l }
+func (l *Live) WithTo(ms int64) *Live                 { l.To = ms; return l }
+func (l *Live) WithDuration(ms int64) *Live           { l.Duration = ms; return l }
+func (l *Live) WithDelay(ms int64) *Live              { l.Delay = ms; return l }
+func (l *Live) WithSource(s string) *Live             { l.Source = s; return l }
+func (l *Live) WithComing(s *LiveState) *Live         { l.Coming = s; return l }
+func (l *Live) WithRunning(s *LiveRunningState) *Live { l.Running = s; return l }
+func (l *Live) WithOver(s *LiveState) *Live           { l.Over = s; return l }
 func (l *Live) WithExecute(a action.Action, data any) *Live {
 	l.Execute = &LiveExecute{Action: a, Data: data}
 	return l

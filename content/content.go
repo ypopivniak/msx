@@ -22,10 +22,10 @@ type Content struct {
 	Restore *bool `json:"restore,omitempty"`
 
 	// Default-false flags.
-	Important  bool `json:"important,omitempty"`
-	Wrap       bool `json:"wrap,omitempty"`
-	Compress   bool `json:"compress,omitempty"`
-	Preselect  bool `json:"preselect,omitempty"`
+	Important bool `json:"important,omitempty"`
+	Wrap      bool `json:"wrap,omitempty"`
+	Compress  bool `json:"compress,omitempty"`
+	Preselect bool `json:"preselect,omitempty"`
 
 	// Tri-state numbers with default 0.
 	Refocus     Tri `json:"refocus,omitempty"`
@@ -137,7 +137,7 @@ func (c *Content) WithOptionsRoot(r *Content) *Content {
 	return c
 }
 
-func (c *Content) WithCaption(s string) *Content  { c.Caption = s; return c }
+func (c *Content) WithCaption(s string) *Content { c.Caption = s; return c }
 func (c *Content) WithCaptionUnderlay(v int) *Content {
 	c.CaptionUnderlay = &v
 	return c

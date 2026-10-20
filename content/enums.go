@@ -38,12 +38,12 @@ var allPreloads = []Preload{PreloadNone, PreloadNext, PreloadPrev, PreloadFull}
 type ItemType string
 
 const (
-	ItemTypeDefault   ItemType = "default"
-	ItemTypeTeaser    ItemType = "teaser"
-	ItemTypeButton    ItemType = "button"
-	ItemTypeSeparate  ItemType = "separate"
-	ItemTypeSpace     ItemType = "space"
-	ItemTypeControl   ItemType = "control"
+	ItemTypeDefault  ItemType = "default"
+	ItemTypeTeaser   ItemType = "teaser"
+	ItemTypeButton   ItemType = "button"
+	ItemTypeSeparate ItemType = "separate"
+	ItemTypeSpace    ItemType = "space"
+	ItemTypeControl  ItemType = "control"
 )
 
 var allItemTypes = []ItemType{

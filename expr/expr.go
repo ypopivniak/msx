@@ -5,7 +5,8 @@
 // let callers compose those expressions without concatenating braces and
 // colons by hand, and without risking malformed output that MSX will emit
 // verbatim as plain text. See:
-//   https://msx.benzac.de/wiki/index.php?title=Inline_Expressions
+//
+//	https://msx.benzac.de/wiki/index.php?title=Inline_Expressions
 package expr
 
 import (
@@ -110,15 +111,15 @@ func (b *Builder) Icon(c color.Color, ic icon.Icon) *Builder {
 	b.sb.WriteString(Icon(c, ic))
 	return b
 }
-func (b *Builder) Char(name string) *Builder           { b.sb.WriteString(Char(name)); return b }
+func (b *Builder) Char(name string) *Builder { b.sb.WriteString(Char(name)); return b }
 func (b *Builder) CharColored(c color.Color, name string) *Builder {
 	b.sb.WriteString(CharColored(c, name))
 	return b
 }
-func (b *Builder) Col(c color.Color) *Builder     { b.sb.WriteString(Col(c)); return b }
-func (b *Builder) Context(prop string) *Builder   { b.sb.WriteString(Context(prop)); return b }
-func (b *Builder) Dict(key string) *Builder       { b.sb.WriteString(Dict(key)); return b }
-func (b *Builder) Number(v any) *Builder          { b.sb.WriteString(Number(v)); return b }
+func (b *Builder) Col(c color.Color) *Builder   { b.sb.WriteString(Col(c)); return b }
+func (b *Builder) Context(prop string) *Builder { b.sb.WriteString(Context(prop)); return b }
+func (b *Builder) Dict(key string) *Builder     { b.sb.WriteString(Dict(key)); return b }
+func (b *Builder) Number(v any) *Builder        { b.sb.WriteString(Number(v)); return b }
 func (b *Builder) NumberFormat(v any, f string) *Builder {
 	b.sb.WriteString(NumberFormat(v, f))
 	return b

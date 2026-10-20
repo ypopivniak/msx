@@ -48,18 +48,18 @@ type Launcher struct {
 // NewLauncher returns a fresh Launcher ready for chained configuration.
 func NewLauncher() *Launcher { return &Launcher{} }
 
-func (l *Launcher) WithIcon(ic icon.Icon) *Launcher  { l.Icon = ic; return l }
-func (l *Launcher) WithImage(url string) *Launcher   { l.Image = url; return l }
+func (l *Launcher) WithIcon(ic icon.Icon) *Launcher   { l.Icon = ic; return l }
+func (l *Launcher) WithImage(url string) *Launcher    { l.Image = url; return l }
 func (l *Launcher) WithColor(c color.Color) *Launcher { l.Color = c; return l }
 
 // New returns an empty Start ready for chained configuration.
 func New() *Start { return &Start{} }
 
-func (s *Start) WithName(v string) *Start         { s.Name = v; return s }
-func (s *Start) WithVersion(v string) *Start      { s.Version = v; return s }
-func (s *Start) WithParameter(v string) *Start    { s.Parameter = v; return s }
-func (s *Start) WithWelcome(w Welcome) *Start     { s.Welcome = w; return s }
-func (s *Start) WithLauncher(l *Launcher) *Start  { s.Launcher = l; return s }
+func (s *Start) WithName(v string) *Start        { s.Name = v; return s }
+func (s *Start) WithVersion(v string) *Start     { s.Version = v; return s }
+func (s *Start) WithParameter(v string) *Start   { s.Parameter = v; return s }
+func (s *Start) WithWelcome(w Welcome) *Start    { s.Welcome = w; return s }
+func (s *Start) WithLauncher(l *Launcher) *Start { s.Launcher = l; return s }
 
 // WithLauncherIcon is a shortcut for the common case of wanting only an
 // icon on the launcher tile; it allocates a Launcher if needed.

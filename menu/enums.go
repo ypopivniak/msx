@@ -12,10 +12,10 @@ import "github.com/ypopivniak/msx/content"
 type Style string
 
 const (
-	StyleDefault         Style = "default"
-	StyleFlat            Style = "flat"
-	StyleFlatSeparator   Style = "flat-separator"
-	StyleOverlay         Style = "overlay"
+	StyleDefault          Style = "default"
+	StyleFlat             Style = "flat"
+	StyleFlatSeparator    Style = "flat-separator"
+	StyleOverlay          Style = "overlay"
 	StyleOverlaySeparator Style = "overlay-separator"
 )
 

@@ -62,12 +62,12 @@ type Item struct {
 	Icon     icon.Icon `json:"icon,omitempty"`
 	IconSize icon.Size `json:"iconSize,omitempty"`
 
-	Headline    string    `json:"headline,omitempty"`
-	Text        textValue `json:"text,omitempty"`
-	Alignment   Alignment `json:"alignment,omitempty"`
-	Truncation  string    `json:"truncation,omitempty"`
-	Centration  string    `json:"centration,omitempty"`
-	Separation  *float64  `json:"separation,omitempty"`
+	Headline   string    `json:"headline,omitempty"`
+	Text       textValue `json:"text,omitempty"`
+	Alignment  Alignment `json:"alignment,omitempty"`
+	Truncation string    `json:"truncation,omitempty"`
+	Centration string    `json:"centration,omitempty"`
+	Separation *float64  `json:"separation,omitempty"`
 
 	Tag        string      `json:"tag,omitempty"`
 	TagColor   color.Color `json:"tagColor,omitempty"`
@@ -223,64 +223,64 @@ func NewItem() *Item { return &Item{} }
 
 // ---- fluent setters (pointer receiver, returns *Item) ----
 
-func (i *Item) WithID(id string) *Item                  { i.ID = id; return i }
-func (i *Item) WithType(t ItemType) *Item               { i.Type = t; return i }
-func (i *Item) WithKey(k key.Key) *Item                 { i.Key = k; return i }
-func (i *Item) WithLayout(l geom.Layout) *Item          { i.Layout = l; return i }
-func (i *Item) WithLayoutXYWH(x, y, w, h int) *Item     { i.Layout = geom.NewLayout(x, y, w, h); return i }
-func (i *Item) WithArea(a geom.Area) *Item              { i.Area = a; return i }
-func (i *Item) WithOffset(o geom.Offset) *Item          { i.Offset = o; return i }
-func (i *Item) WithDisplay(v bool) *Item                { i.Display = &v; return i }
-func (i *Item) WithEnable(v bool) *Item                 { i.Enable = &v; return i }
-func (i *Item) WithCompress(v bool) *Item               { i.Compress = &v; return i }
-func (i *Item) WithShortcut(v bool) *Item               { i.Shortcut = &v; return i }
-func (i *Item) WithFocus(v bool) *Item                  { i.Focus = v; return i }
-func (i *Item) WithExecute(v bool) *Item                { i.Execute = v; return i }
-func (i *Item) WithEnumerate(v bool) *Item              { i.Enumerate = &v; return i }
-func (i *Item) WithDecompress(v bool) *Item             { i.Decompress = v; return i }
-func (i *Item) WithRound(v int) *Item                   { i.Round = RoundInt(v); return i }
-func (i *Item) WithRoundBool(v bool) *Item              { i.Round = RoundBool(v); return i }
-func (i *Item) WithBreak(b Break) *Item                 { i.Break = b; return i }
-func (i *Item) WithGroup(g string) *Item                { i.Group = g; return i }
-func (i *Item) WithBackground(url string) *Item         { i.Background = url; return i }
-func (i *Item) WithColor(c color.Color) *Item           { i.Color = c; return i }
-func (i *Item) WithTitle(s string) *Item                { i.Title = s; return i }
-func (i *Item) WithTitleHeader(s string) *Item          { i.TitleHeader = s; return i }
-func (i *Item) WithTitleFooter(s string) *Item          { i.TitleFooter = s; return i }
-func (i *Item) WithLabel(s string) *Item                { i.Label = s; return i }
-func (i *Item) WithIcon(ic icon.Icon) *Item             { i.Icon = ic; return i }
-func (i *Item) WithIconSize(s icon.Size) *Item          { i.IconSize = s; return i }
-func (i *Item) WithHeadline(s string) *Item             { i.Headline = s; return i }
-func (i *Item) WithText(lines ...string) *Item          { i.Text = lines; return i }
-func (i *Item) WithAlignment(a Alignment) *Item         { i.Alignment = a; return i }
-func (i *Item) WithTruncation(s string) *Item           { i.Truncation = s; return i }
-func (i *Item) WithCentration(s string) *Item           { i.Centration = s; return i }
-func (i *Item) WithSeparation(v float64) *Item          { i.Separation = &v; return i }
-func (i *Item) WithTag(s string) *Item                  { i.Tag = s; return i }
-func (i *Item) WithTagColor(c color.Color) *Item        { i.TagColor = c; return i }
-func (i *Item) WithBadge(s string) *Item                { i.Badge = s; return i }
-func (i *Item) WithBadgeColor(c color.Color) *Item      { i.BadgeColor = c; return i }
-func (i *Item) WithStamp(s string) *Item                { i.Stamp = s; return i }
-func (i *Item) WithStampColor(c color.Color) *Item      { i.StampColor = c; return i }
-func (i *Item) WithProgress(v float64) *Item            { i.Progress = &v; return i }
-func (i *Item) WithProgressColor(c color.Color) *Item   { i.ProgressColor = c; return i }
-func (i *Item) WithProgressBack(c color.Color) *Item    { i.ProgressBackColor = c; return i }
-func (i *Item) WithWrapperColor(c color.Color) *Item    { i.WrapperColor = c; return i }
-func (i *Item) WithImage(url string) *Item              { i.Image = url; return i }
-func (i *Item) WithImageFiller(f ImageFiller) *Item     { i.ImageFiller = f; return i }
-func (i *Item) WithImageWidth(v float64) *Item          { i.ImageWidth = &v; return i }
-func (i *Item) WithImageHeight(v float64) *Item         { i.ImageHeight = &v; return i }
-func (i *Item) WithImageOverlay(v int) *Item            { i.ImageOverlay = &v; return i }
-func (i *Item) WithImagePreload(v bool) *Item           { i.ImagePreload = v; return i }
-func (i *Item) WithImageLabel(s string) *Item           { i.ImageLabel = s; return i }
-func (i *Item) WithImageColor(c color.Color) *Item      { i.ImageColor = c; return i }
-func (i *Item) WithImageScreen(f ImageFiller) *Item     { i.ImageScreenFiller = f; return i }
-func (i *Item) WithImageBoundary(v bool) *Item          { i.ImageBoundary = v; return i }
-func (i *Item) WithPlayerLabel(s string) *Item          { i.PlayerLabel = s; return i }
-func (i *Item) WithExtensionIcon(ic icon.Icon) *Item    { i.ExtensionIcon = ic; return i }
-func (i *Item) WithExtensionLabel(s string) *Item       { i.ExtensionLabel = s; return i }
-func (i *Item) WithAction(a action.Action) *Item        { i.Action = a; return i }
-func (i *Item) WithData(d any) *Item                    { i.Data = d; return i }
+func (i *Item) WithID(id string) *Item                { i.ID = id; return i }
+func (i *Item) WithType(t ItemType) *Item             { i.Type = t; return i }
+func (i *Item) WithKey(k key.Key) *Item               { i.Key = k; return i }
+func (i *Item) WithLayout(l geom.Layout) *Item        { i.Layout = l; return i }
+func (i *Item) WithLayoutXYWH(x, y, w, h int) *Item   { i.Layout = geom.NewLayout(x, y, w, h); return i }
+func (i *Item) WithArea(a geom.Area) *Item            { i.Area = a; return i }
+func (i *Item) WithOffset(o geom.Offset) *Item        { i.Offset = o; return i }
+func (i *Item) WithDisplay(v bool) *Item              { i.Display = &v; return i }
+func (i *Item) WithEnable(v bool) *Item               { i.Enable = &v; return i }
+func (i *Item) WithCompress(v bool) *Item             { i.Compress = &v; return i }
+func (i *Item) WithShortcut(v bool) *Item             { i.Shortcut = &v; return i }
+func (i *Item) WithFocus(v bool) *Item                { i.Focus = v; return i }
+func (i *Item) WithExecute(v bool) *Item              { i.Execute = v; return i }
+func (i *Item) WithEnumerate(v bool) *Item            { i.Enumerate = &v; return i }
+func (i *Item) WithDecompress(v bool) *Item           { i.Decompress = v; return i }
+func (i *Item) WithRound(v int) *Item                 { i.Round = RoundInt(v); return i }
+func (i *Item) WithRoundBool(v bool) *Item            { i.Round = RoundBool(v); return i }
+func (i *Item) WithBreak(b Break) *Item               { i.Break = b; return i }
+func (i *Item) WithGroup(g string) *Item              { i.Group = g; return i }
+func (i *Item) WithBackground(url string) *Item       { i.Background = url; return i }
+func (i *Item) WithColor(c color.Color) *Item         { i.Color = c; return i }
+func (i *Item) WithTitle(s string) *Item              { i.Title = s; return i }
+func (i *Item) WithTitleHeader(s string) *Item        { i.TitleHeader = s; return i }
+func (i *Item) WithTitleFooter(s string) *Item        { i.TitleFooter = s; return i }
+func (i *Item) WithLabel(s string) *Item              { i.Label = s; return i }
+func (i *Item) WithIcon(ic icon.Icon) *Item           { i.Icon = ic; return i }
+func (i *Item) WithIconSize(s icon.Size) *Item        { i.IconSize = s; return i }
+func (i *Item) WithHeadline(s string) *Item           { i.Headline = s; return i }
+func (i *Item) WithText(lines ...string) *Item        { i.Text = lines; return i }
+func (i *Item) WithAlignment(a Alignment) *Item       { i.Alignment = a; return i }
+func (i *Item) WithTruncation(s string) *Item         { i.Truncation = s; return i }
+func (i *Item) WithCentration(s string) *Item         { i.Centration = s; return i }
+func (i *Item) WithSeparation(v float64) *Item        { i.Separation = &v; return i }
+func (i *Item) WithTag(s string) *Item                { i.Tag = s; return i }
+func (i *Item) WithTagColor(c color.Color) *Item      { i.TagColor = c; return i }
+func (i *Item) WithBadge(s string) *Item              { i.Badge = s; return i }
+func (i *Item) WithBadgeColor(c color.Color) *Item    { i.BadgeColor = c; return i }
+func (i *Item) WithStamp(s string) *Item              { i.Stamp = s; return i }
+func (i *Item) WithStampColor(c color.Color) *Item    { i.StampColor = c; return i }
+func (i *Item) WithProgress(v float64) *Item          { i.Progress = &v; return i }
+func (i *Item) WithProgressColor(c color.Color) *Item { i.ProgressColor = c; return i }
+func (i *Item) WithProgressBack(c color.Color) *Item  { i.ProgressBackColor = c; return i }
+func (i *Item) WithWrapperColor(c color.Color) *Item  { i.WrapperColor = c; return i }
+func (i *Item) WithImage(url string) *Item            { i.Image = url; return i }
+func (i *Item) WithImageFiller(f ImageFiller) *Item   { i.ImageFiller = f; return i }
+func (i *Item) WithImageWidth(v float64) *Item        { i.ImageWidth = &v; return i }
+func (i *Item) WithImageHeight(v float64) *Item       { i.ImageHeight = &v; return i }
+func (i *Item) WithImageOverlay(v int) *Item          { i.ImageOverlay = &v; return i }
+func (i *Item) WithImagePreload(v bool) *Item         { i.ImagePreload = v; return i }
+func (i *Item) WithImageLabel(s string) *Item         { i.ImageLabel = s; return i }
+func (i *Item) WithImageColor(c color.Color) *Item    { i.ImageColor = c; return i }
+func (i *Item) WithImageScreen(f ImageFiller) *Item   { i.ImageScreenFiller = f; return i }
+func (i *Item) WithImageBoundary(v bool) *Item        { i.ImageBoundary = v; return i }
+func (i *Item) WithPlayerLabel(s string) *Item        { i.PlayerLabel = s; return i }
+func (i *Item) WithExtensionIcon(ic icon.Icon) *Item  { i.ExtensionIcon = ic; return i }
+func (i *Item) WithExtensionLabel(s string) *Item     { i.ExtensionLabel = s; return i }
+func (i *Item) WithAction(a action.Action) *Item      { i.Action = a; return i }
+func (i *Item) WithData(d any) *Item                  { i.Data = d; return i }
 func (i *Item) WithProperties(p map[string]string) *Item {
 	i.Properties = make(map[string]any, len(p))
 	for k, v := range p {
@@ -298,11 +298,11 @@ func (i *Item) WithPropertyValue(k string, v any) *Item {
 	i.Properties[k] = v
 	return i
 }
-func (i *Item) WithOptions(p *Page) *Item         { i.Options = PanelFromPage(p); return i }
-func (i *Item) WithOptionsPanel(p *Panel) *Item   { i.Options = p; return i }
-func (i *Item) WithOptionsRoot(r *Content) *Item  { i.Options = PanelFromContent(r); return i }
-func (i *Item) WithLive(l *Live) *Item            { i.Live = l; return i }
-func (i *Item) WithSelection(s *Selection) *Item  { i.Selection = s; return i }
+func (i *Item) WithOptions(p *Page) *Item        { i.Options = PanelFromPage(p); return i }
+func (i *Item) WithOptionsPanel(p *Panel) *Item  { i.Options = p; return i }
+func (i *Item) WithOptionsRoot(r *Content) *Item { i.Options = PanelFromContent(r); return i }
+func (i *Item) WithLive(l *Live) *Item           { i.Live = l; return i }
+func (i *Item) WithSelection(s *Selection) *Item { i.Selection = s; return i }
 
 // Validate performs strict per-field checks. Cross-field rules that depend
 // on the enclosing Page or Content (e.g. "layout is required unless the

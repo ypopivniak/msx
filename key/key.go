@@ -25,16 +25,16 @@ const (
 
 // Playback controls.
 const (
-	Play             Key = "play"
-	Pause            Key = "pause"
-	Stop             Key = "stop"
-	TogglePlayPause  Key = "toggle_play_pause"
-	Forward          Key = "forward"
-	Rewind           Key = "rewind"
-	NextTrack        Key = "next_track"
-	PreviousTrack    Key = "previous_track"
-	Record           Key = "record"
-	Restart          Key = "restart"
+	Play            Key = "play"
+	Pause           Key = "pause"
+	Stop            Key = "stop"
+	TogglePlayPause Key = "toggle_play_pause"
+	Forward         Key = "forward"
+	Rewind          Key = "rewind"
+	NextTrack       Key = "next_track"
+	PreviousTrack   Key = "previous_track"
+	Record          Key = "record"
+	Restart         Key = "restart"
 )
 
 // Channel & menu controls.

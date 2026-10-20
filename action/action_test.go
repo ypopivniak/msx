@@ -38,11 +38,11 @@ func TestCompound_Shapes(t *testing.T) {
 
 func TestInvalidate_Variants(t *testing.T) {
 	checks := map[string]action.Action{
-		"invalidate:content":                  action.Invalidate("content"),
-		"invalidate:menu:abc":                 action.InvalidateItem("menu", "abc"),
-		"invalidate:content:flag:home":        action.InvalidateFlag("content", "home"),
-		"invalidate:panel:overlay:id1":        action.InvalidateOverlay("panel", "id1"),
-		"invalidate:content:underlay:header":  action.InvalidateUnderlay("content", "header"),
+		"invalidate:content":                 action.Invalidate("content"),
+		"invalidate:menu:abc":                action.InvalidateItem("menu", "abc"),
+		"invalidate:content:flag:home":       action.InvalidateFlag("content", "home"),
+		"invalidate:panel:overlay:id1":       action.InvalidateOverlay("panel", "id1"),
+		"invalidate:content:underlay:header": action.InvalidateUnderlay("content", "header"),
 	}
 	for want, got := range checks {
 		if string(got) != want {

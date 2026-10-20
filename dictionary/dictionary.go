@@ -2,7 +2,8 @@
 //
 // A dictionary is a flat key -> (string | []string) map under a top-level
 // `properties` object, with `name` and `version` metadata. See:
-//   https://msx.benzac.de/wiki/index.php?title=Dictionary_Structure
+//
+//	https://msx.benzac.de/wiki/index.php?title=Dictionary_Structure
 //
 // Values may be arrays of strings (since MSX 0.1.160) for multi-line
 // entries; we expose Set for single-line and SetLines for array-valued

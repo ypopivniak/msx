@@ -90,11 +90,11 @@ func NewPLS(url string) *Convert {
 	return &Convert{Endpoint: DefaultPLSEndpoint, URL: url}
 }
 
-func (c *Convert) WithKind(k ContentKind) *Convert     { c.Kind = k; return c }
-func (c *Convert) WithHeadline(s string) *Convert      { c.Headline = s; return c }
-func (c *Convert) WithBackground(url string) *Convert  { c.Background = url; return c }
-func (c *Convert) WithMode(m Mode) *Convert            { c.Mode = m; return c }
-func (c *Convert) WithContext(ctx Context) *Convert    { c.Context = ctx; return c }
+func (c *Convert) WithKind(k ContentKind) *Convert    { c.Kind = k; return c }
+func (c *Convert) WithHeadline(s string) *Convert     { c.Headline = s; return c }
+func (c *Convert) WithBackground(url string) *Convert { c.Background = url; return c }
+func (c *Convert) WithMode(m Mode) *Convert           { c.Mode = m; return c }
+func (c *Convert) WithContext(ctx Context) *Convert   { c.Context = ctx; return c }
 func (c *Convert) WithEndpoint(endpoint string) *Convert {
 	c.Endpoint = endpoint
 	return c
@@ -179,12 +179,12 @@ func NewMRSS(feedURL string) *MRSS {
 	return &MRSS{FeedURL: feedURL, Plugin: DefaultMRSSPlugin}
 }
 
-func (m *MRSS) WithPlugin(p string) *MRSS         { m.Plugin = p; return m }
-func (m *MRSS) WithBanner(url string) *MRSS       { m.Banner = url; return m }
-func (m *MRSS) WithBackground(url string) *MRSS   { m.Background = url; return m }
-func (m *MRSS) WithPluginURL(url string) *MRSS    { m.PluginURL = url; return m }
-func (m *MRSS) WithDictionary(url string) *MRSS   { m.Dictionary = url; return m }
-func (m *MRSS) WithBrand(color string) *MRSS      { m.Brand = color; return m }
+func (m *MRSS) WithPlugin(p string) *MRSS       { m.Plugin = p; return m }
+func (m *MRSS) WithBanner(url string) *MRSS     { m.Banner = url; return m }
+func (m *MRSS) WithBackground(url string) *MRSS { m.Background = url; return m }
+func (m *MRSS) WithPluginURL(url string) *MRSS  { m.PluginURL = url; return m }
+func (m *MRSS) WithDictionary(url string) *MRSS { m.Dictionary = url; return m }
+func (m *MRSS) WithBrand(color string) *MRSS    { m.Brand = color; return m }
 
 // Validate ensures the feed URL is present.
 func (m *MRSS) Validate() error {

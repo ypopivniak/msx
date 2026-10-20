@@ -242,9 +242,9 @@ func Event(id string) Action { return Prefixed("event", id) }
 
 // ---- Settings family (common setters) ----
 
-func SettingsAbout() Action               { return Action("settings:about") }
-func SettingsAnimate(mode int) Action     { return Prefixed("settings", "animate:"+itoa(mode)) }
-func SettingsZoom(value string) Action    { return Prefixed("settings", "zoom:"+value) }
+func SettingsAbout() Action            { return Action("settings:about") }
+func SettingsAnimate(mode int) Action  { return Prefixed("settings", "animate:"+itoa(mode)) }
+func SettingsZoom(value string) Action { return Prefixed("settings", "zoom:"+value) }
 
 // ---- Menu / Content / Panel load variants ----
 
@@ -261,10 +261,10 @@ func ContentData() Action { return Action("content:data") }
 func PanelData() Action { return Action("panel:data") }
 
 // Playlist / Slideshow producers.
-func Playlist(url string) Action      { return Prefixed("playlist", url) }
-func PlaylistData() Action            { return Action("playlist:data") }
-func Slideshow(url string) Action     { return Prefixed("slideshow", url) }
-func SlideshowData() Action           { return Action("slideshow:data") }
+func Playlist(url string) Action  { return Prefixed("playlist", url) }
+func PlaylistData() Action        { return Action("playlist:data") }
+func Slideshow(url string) Action { return Prefixed("slideshow", url) }
+func SlideshowData() Action       { return Action("slideshow:data") }
 
 // itoa is a tiny helper so this file doesn't import strconv just to format
 // integers in action strings.

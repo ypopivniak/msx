@@ -32,7 +32,7 @@ func (s *Selection) WithBackground(url string) *Selection {
 	return s
 }
 func (s *Selection) WithAction(a action.Action) *Selection { s.Action = a; return s }
-func (s *Selection) WithData(d any) *Selection            { s.Data = d; return s }
+func (s *Selection) WithData(d any) *Selection             { s.Data = d; return s }
 
 // Validate is a no-op at present — the Selection Object has no strict
 // per-field constraints in the MSX spec beyond JSON type safety, which

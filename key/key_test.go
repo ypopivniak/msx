@@ -10,13 +10,13 @@ import (
 
 func TestKey_Constants(t *testing.T) {
 	cases := map[string]key.Key{
-		"play":               key.Play,
-		"toggle_play_pause":  key.TogglePlayPause,
-		"channel_up":         key.ChannelUp,
-		"previous_track":     key.PreviousTrack,
-		"bracket_open":       key.BracketOpen,
-		"0":                  key.D0,
-		"a":                  key.A,
+		"play":              key.Play,
+		"toggle_play_pause": key.TogglePlayPause,
+		"channel_up":        key.ChannelUp,
+		"previous_track":    key.PreviousTrack,
+		"bracket_open":      key.BracketOpen,
+		"0":                 key.D0,
+		"a":                 key.A,
 	}
 	for want, got := range cases {
 		if string(got) != want {

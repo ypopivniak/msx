@@ -69,10 +69,10 @@ func (p *Page) AddItem(it *Item) *Page {
 
 func (p *Page) WithAction(a action.Action) *Page { p.Action = a; return p }
 func (p *Page) WithData(d any) *Page             { p.Data = d; return p }
-func (p *Page) WithOptions(o *Page) *Page         { p.Options = PanelFromPage(o); return p }
-func (p *Page) WithOptionsPanel(o *Panel) *Page   { p.Options = o; return p }
-func (p *Page) WithOptionsRoot(r *Content) *Page  { p.Options = PanelFromContent(r); return p }
-func (p *Page) WithCaption(s string) *Page        { p.Caption = s; return p }
+func (p *Page) WithOptions(o *Page) *Page        { p.Options = PanelFromPage(o); return p }
+func (p *Page) WithOptionsPanel(o *Panel) *Page  { p.Options = o; return p }
+func (p *Page) WithOptionsRoot(r *Content) *Page { p.Options = PanelFromContent(r); return p }
+func (p *Page) WithCaption(s string) *Page       { p.Caption = s; return p }
 func (p *Page) WithCaptionUnderlay(v int) *Page  { p.CaptionUnderlay = &v; return p }
 func (p *Page) WithNavigationOffset(v float64) *Page {
 	p.NavigationOffset = &v
