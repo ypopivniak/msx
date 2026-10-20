@@ -2,7 +2,6 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/ypopivniak/msx.svg)](https://pkg.go.dev/github.com/ypopivniak/msx)
 [![CI](https://github.com/ypopivniak/msx/actions/workflows/ci.yml/badge.svg)](https://github.com/ypopivniak/msx/actions/workflows/ci.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ypopivniak/msx)](https://goreportcard.com/report/github.com/ypopivniak/msx)
 [![Release](https://img.shields.io/github/v/release/ypopivniak/msx)](https://github.com/ypopivniak/msx/releases)
 [![License: MIT](https://img.shields.io/github/license/ypopivniak/msx)](LICENSE)
 
