@@ -1,0 +1,4 @@
+.idea/
+server.key
+.DS_Store
+server.crt
