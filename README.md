@@ -1,5 +1,7 @@
 # msx
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/ypopivniak/msx.svg)](https://pkg.go.dev/github.com/ypopivniak/msx)
+
 Strictly-typed Go API for producing and consuming [Media Station X](https://msx.benzac.de/) JSON documents. Builders for every MSX root object (Start, Menu, Content, Dictionary), polymorphic helpers for the tricky fields (Panel, Live, Selection, ItemData), and a small HTTP package for serving everything with the CORS headers MSX requires.
 
 - Module path: `github.com/ypopivniak/msx`

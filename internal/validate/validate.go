@@ -51,8 +51,8 @@ func Join(errs ...error) error {
 // prefix + "." (or prefix alone if the error had no path). It is used
 // to bubble nested-struct errors up through parent validators.
 func Prefix(prefix string, err error) error {
-	if err == nil {
-		return nil
+	if err == nil || prefix == "" {
+		return err
 	}
 	walk(err, func(fe *FieldError) {
 		if fe.Path == "" {
@@ -68,9 +68,12 @@ func walk(err error, fn func(*FieldError)) {
 	if err == nil {
 		return
 	}
-	var fe *FieldError
-	if errors.As(err, &fe) {
+	// Match err itself only: errors.As would also find the first FieldError
+	// nested inside a joined error, which the recursion below visits again,
+	// so it would be rewritten twice.
+	if fe, ok := err.(*FieldError); ok {
 		fn(fe)
+		return
 	}
 	// errors.Join produces an error that exposes Unwrap() []error.
 	type multi interface{ Unwrap() []error }
